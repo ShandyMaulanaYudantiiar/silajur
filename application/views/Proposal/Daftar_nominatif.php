@@ -1,7 +1,7 @@
 <div class="col-12 grid-margin stretch-card">
     <div class="card mb-5">
         <div class="card-body">
-            <h4 class="card-title">Form Pengajuan Proposal</h4>
+            <h4 class="card-title">Form Pengajuan Nominatif</h4>
             <p class="card-description"> Isikan data berikut untuk mengajukan Proposal </p>
             <form>
                 <div class="form-group row">
