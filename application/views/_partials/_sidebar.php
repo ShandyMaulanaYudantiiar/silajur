@@ -72,7 +72,7 @@
     </li>
     <!-- Nav Item - Tables -->
     <li class="nav-item">
-      <a class="nav-link" href="<?= base_url('Nominatif') ?>">
+      <a class="nav-link" href="<?= base_url('Nominatif/tambah') ?>">
         <i class="fas fa-fw fa-plus"></i>
         <span>Tambah Nominatif</span>
       </a>

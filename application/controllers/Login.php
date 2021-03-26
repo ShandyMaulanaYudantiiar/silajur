@@ -28,7 +28,7 @@ class Login extends CI_Controller{
 				'status' => "login"
 				);
 			$this->session->set_userdata($data_session);
-			redirect(base_url("Dashboard"));
+			redirect("Dashboard");
 		}else{
 			echo "NIP dan Password SALAH !";
 		}

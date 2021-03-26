@@ -5,7 +5,6 @@ class M_proposal extends CI_Model
     public function getAll(){
         $this->db->select('*');
         $this->db->from('proposal');
-
         $query = $this->db->get()->result();
         return $query;
     }

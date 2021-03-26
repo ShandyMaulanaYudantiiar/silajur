@@ -1,46 +1,51 @@
 <?php
 class Nominatif extends CI_Controller
 {
-
     function __construct()
     {
         parent::__construct();
         // Memamnggil Model
-        $this->load->model('M_akun');
+        $this->load->model('M_Nominatif');
         // Cek Status Login
         if ($this->session->userdata('status') != "login") {
-            redirect(base_url("Login"));
+            redirect("Login");
         }
     }
-    // Halaman Daftar Akun
+    // Halaman Daftar Nominatif
     function index()
     {
         $data = array(
             'title' => 'Daftar Nominatif'
         );
-        $this->template->display('Proposal/Daftar_nominatif', $data);
+        $this->template->display('Nominatif/Daftar', $data);
     }
-    // Halaman Tambah Akun
+    // Halaman Tambah Nominatif
     function tambah()
     {
-        $data = array('title' => 'Tambah Akun');
-        $this->template->display('Akun/Tambah', $data);
+        $data = array('title' => 'Tambah Nominatif');
+        $this->template->display('Nominatif/Tambah', $data);
     }
-    // Fungsi Untuk menambah Akun
+    // Fungsi Untuk menambah Nominatif
     function add()
     {
         $data = [
-            'nama'        => $this->input->post('nama'),
-            'nip'        => $this->input->post('nip'),
-            'email'        => $this->input->post('email'),
-            'jabatan'    => $this->input->post('jabatan'),
-            'password'    => md5($this->input->post('password'))
+            'nomor'             => date("Ymd") . time(),
+            'tgl'               => $this->input->post('tgl'),
+            'tmpt'              => $this->input->post('tmpt'),
+            'almt'              => $this->input->post('almt'),
+            'jenis'             => $this->input->post('jenis'),
+            'jumlah'            => $this->input->post('jumlah'),
+            'nm_usaha'          => $this->input->post('nm_usaha'),
+            'posisi'            => $this->input->post('posisi'),
+            'nm_perusahaan'     => $this->input->post('nm_perusahaan'),
+            'jn_usaha'          => $this->input->post('jn_usaha'),
+            'ket'               => $this->input->post('ket')
         ];
-        //kalau form diisi dengan benar maka simpan data ke table user
-        $this->M_akun->create($data);
-        redirect('Akun');
+        //kalau form diisi dengan benar maka simpan data ke table Nominatif
+        $this->M_Nominatif->create($data);
+        redirect('Nominatif');
     }
-    // Update Akun
+    // Update Nominatif
     function update()
     {
         $data = [
@@ -52,22 +57,22 @@ class Nominatif extends CI_Controller
         ];
         $where = ['nip'    => $this->input->post('nip')];
         //kalau form diisi dengan benar maka simpan data ke table user
-        $this->M_akun->update($data, $where);
-        redirect('Akun');
+        $this->M_Nominatif->update($data, $where);
+        redirect('Nominatif');
     }
-    // Menampilkan Halaman Detail Akun
+    // Menampilkan Halaman Detail Nominatif
     function edit($nip = 0)
     {
         $data = array(
-            'title' => 'Edit akun',
-            'akun' => $this->M_akun->edit($nip)
+            'title' => 'Edit Nominatif',
+            'akun' => $this->M_Nominatif->edit($nip)
         );
-        $this->template->display('Akun/Edit', $data);
+        $this->template->display('Nominatif/Edit', $data);
     }
-    // Menghapus Akun
+    // Menghapus Nominatif
     public function delete($nip)
     {
-        $this->M_akun->delete($nip);
-        redirect('Akun');
+        $this->M_Nominatif->delete($nip);
+        redirect('Nominatif');
     }
 }

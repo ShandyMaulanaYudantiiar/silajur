@@ -29,7 +29,7 @@
                       Silahkan Isikan data Berikut untuk Login
                     </p>
                   </div>
-                  <form class="user" action="<?= base_url('login/aksi_login'); ?>" method="post">
+                  <form class="user" action="<?= base_url('Login/aksi_login'); ?>" method="post">
                     <div class="form-group">
                       <input type="text" class="form-control form-control-user" name="nip" aria-describedby="emailHelp" placeholder="Masukkan Nomor Induk Pegawai">
                     </div>
