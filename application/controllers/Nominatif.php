@@ -15,7 +15,8 @@ class Nominatif extends CI_Controller
     function index()
     {
         $data = array(
-            'title' => 'Daftar Nominatif'
+            'title' => 'Daftar Nominatif',
+            'Proposal'     => $this->M_Nominatif->getAll()
         );
         $this->template->display('Nominatif/Daftar', $data);
     }
@@ -61,18 +62,18 @@ class Nominatif extends CI_Controller
         redirect('Nominatif');
     }
     // Menampilkan Halaman Detail Nominatif
-    function edit($nip = 0)
+    function edit($nomor = 0)
     {
         $data = array(
             'title' => 'Edit Nominatif',
-            'akun' => $this->M_Nominatif->edit($nip)
+            'akun' => $this->M_Nominatif->edit($nomor)
         );
         $this->template->display('Nominatif/Edit', $data);
     }
     // Menghapus Nominatif
-    public function delete($nip)
+    public function delete($nomor)
     {
-        $this->M_Nominatif->delete($nip);
+        $this->M_Nominatif->delete($nomor);
         redirect('Nominatif');
     }
 }
