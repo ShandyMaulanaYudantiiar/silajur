@@ -30,7 +30,7 @@ class Nominatif extends CI_Controller
     function add()
     {
         $data = [
-            'nomor'             => date("Ymd") . time(),
+            'nomor'             => $this->input->post('nomor'),
             'tgl'               => $this->input->post('tgl'),
             'tmpt'              => $this->input->post('tmpt'),
             'almt'              => $this->input->post('almt'),

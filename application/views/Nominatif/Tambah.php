@@ -4,7 +4,14 @@
             <h4 class="card-title">Form Pengajuan Nominatif</h4>
             <p class="card-description"> Isikan data berikut untuk mengajukan Proposal </p>
             <form class="forms-sample" action="<?= base_url('Nominatif/add'); ?>" method="POST" enctype="multipart/form-data">
-                <div class="form-group row">
+                <div class="form-group row mt-3">
+                    <label class="col-sm-3 col-form-label">Nomor</label>
+                    <div class="col-sm-7">
+                        <input type="number" class="form-control" name="nomor">
+                    </div>
+                </div>
+                <span><strong>Pemberian entertainment dan sejenisnya</strong></span>
+                <div class="form-group row mt-2">
                     <label class="col-sm-3 col-form-label">Tanggal</label>
                     <div class="col-sm-7">
                         <input type="date" class="form-control" name="tgl" placeholder="Pilih Tanggal">
@@ -66,7 +73,7 @@
                     </div>
                 </div>
                 <button class="btn btn-success" type="submit">submit</button>
-                </form>
+            </form>
         </div>
     </div>
 </div>

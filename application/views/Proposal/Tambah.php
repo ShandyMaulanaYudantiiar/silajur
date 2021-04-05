@@ -28,16 +28,34 @@
                 <div class="col-sm-9">
                     <div class="custom-file">
                         <input type="file" class="custom-file-input" id="dok_proposal" name="dok_proposal">
-                        <label class="custom-file-label" for="dok-proposal">Choose file</label>
+                        <label class="custom-file-label" for="dok-proposal">Upload file</label>
                     </div>
                 </div>
             </div>
             <div class="form-group row">
-                <label class="col-sm-3 col-form-label">Dokumen Pendukung</label>
+                <label class="col-sm-3 col-form-label">Daftar Nominatif</label>
                 <div class="col-sm-9">
                     <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="dok_proposal" name="dok_proposal">
-                        <label class="custom-file-label" for="dok-proposal">Choose file</label>
+                        <input type="file" class="custom-file-input" id="daftar_nominatif" name="daftar_nominatif">
+                        <label class="custom-file-label" for="daftar_nominatif">Upload file</label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-3 col-form-label">Bukti Transaksi</label>
+                <div class="col-sm-9">
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="bukti_transaksi" name="bukti_transaksi">
+                        <label class="custom-file-label" for="bukti_transaksi">Upload file</label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-3 col-form-label">Dokumentasi</label>
+                <div class="col-sm-9">
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="dokumentasi" name="dokumentasi">
+                        <label class="custom-file-label" for="dokumentasi">Upload file</label>
                     </div>
                 </div>
             </div>
