@@ -65,7 +65,7 @@
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label class="col-sm-3 col-form-label">Lampiran Dokumen</label>
+                    <label class="col-sm-3 col-form-label">Dokumen Proposal</label>
                     <div class="col-sm-9 mt-2">
                         <a href="<?= base_url('Proposal/download/' . $Proposal->dok_proposal); ?>">
                             <?= $Proposal->dok_proposal ?>
@@ -78,35 +78,27 @@
                 if ($Jurnal->dok_jurnal == NULL) { ?>
                     <?php
                     // Jika SUDAH DI UPLOAD
-                    if ($Proposal->tanggungan != "Pending" && $Proposal->tanggungan != NULL && $Proposal->tanggungan != "Done") {
-                        // KELUAR link DOWNLOAD
-                    ?>
+                    if ($Proposal->tanggungan != "Pending") {
+                        if ($Proposal->tanggungan != NULL) { ?>
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">Lampiran Tanggungan</label>
+                                <div class="col-sm-9 mt-2">
+                                    <a href="<?= base_url('Proposal/download_tanggungan/' . $Proposal->tanggungan); ?>">
+                                        <?= $Proposal->tanggungan ?>
+                                    </a>
+                                </div>
+                            </div>
+                        <?php } ?>
+                        <input type="hidden" value="<?= $Proposal->id_proposal; ?>" name="id_proposal">
                         <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Lampiran Tanggungan</label>
-                            <div class="col-sm-9 mt-2">
-                                <a href="<?= base_url('Proposal/download_tanggungan/' . $Proposal->tanggungan); ?>">
-                                    <?= $Proposal->tanggungan ?>
-                                </a>
+                            <label class="col-sm-3 col-form-label">Upload Jurnal</label>
+                            <div class="col-sm-9">
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" id="dok_jurnal" name="dok_jurnal">
+                                    <label class="custom-file-label" for="dok-proposal">Choose file</label>
+                                </div>
                             </div>
                         </div>
-                    <?php } else {
-                    // Jika BELUM di UPLOAD maka KELUAR tombol UPLOAD 
-                    ?>
-                    <input type="hidden" value="<?= $Proposal->id_proposal; ?>" name="id_proposal">
-                    <div class="form-group row">
-                        <label class="col-sm-3 col-form-label">Upload Jurnal</label>
-                        <div class="col-sm-9">
-                            <div class="custom-file">
-                                <input type="file" class="custom-file-input" id="dok_jurnal" name="dok_jurnal">
-                                <label class="custom-file-label" for="dok-proposal">Choose file</label>
-                            </div>
-                        </div>
-                    </div>
-                    <span class="float-right mt-5 mb-2">
-                        <button class="btn btn-success" type="submit">
-                            Submit
-                        </button>
-                    </span>
                     <?php } ?>
                 <?php } else {
                     // Jika DOK_JURNAL TERISI
