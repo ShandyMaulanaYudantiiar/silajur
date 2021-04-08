@@ -100,11 +100,29 @@
                         <?php if ($this->session->userdata('jabatan') == "Divisi Umum") { ?>
                             <input type="hidden" value="<?= $Proposal->id_proposal ?>" name="id_proposal" />
                             <div class="form-group row">
-                                <label class="col-sm-3 col-form-label">Dokumen Pertanggung Jawaban</label>
-                                <div class="col-sm-6">
+                                <label class="col-sm-3 col-form-label">Daftar Nominatif</label>
+                                <div class="col-sm-9">
                                     <div class="custom-file">
-                                        <input type="file" class="custom-file-input" id="tanggungan" name="tanggungan">
-                                        <label class="custom-file-label" for="dok-proposal">Choose file</label>
+                                        <input type="file" class="custom-file-input" id="daftar_nominatif" name="daftar_nominatif">
+                                        <label class="custom-file-label" for="daftar_nominatif">Upload file</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">Bukti Transaksi</label>
+                                <div class="col-sm-9">
+                                    <div class="custom-file">
+                                        <input type="file" class="custom-file-input" id="bukti_transaksi" name="bukti_transaksi">
+                                        <label class="custom-file-label" for="bukti_transaksi">Upload file</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">Dokumentasi</label>
+                                <div class="col-sm-9">
+                                    <div class="custom-file">
+                                        <input type="file" class="custom-file-input" id="dokumentasi" name="dokumentasi">
+                                        <label class="custom-file-label" for="dokumentasi">Upload file</label>
                                     </div>
                                 </div>
                             </div>
@@ -114,25 +132,25 @@
                                 </button>
                             </span>
                         <?php } ?>
-                    <?php 
-                }elseif ($Proposal->tanggungan != "Pending" && $Proposal->tanggungan != NULL&& $Proposal->tanggungan != "Done")
-                {?>
+                    <?php
+                    } elseif ($Proposal->tanggungan != "Pending" && $Proposal->tanggungan != NULL && $Proposal->tanggungan != "Done") { ?>
                         <div class="form-group row">
-                        <label class="col-sm-3 col-form-label">Lampiran Tanggungan</label>
-                        <div class="col-sm-9 mt-2">
-                            <a href="<?= base_url('Proposal/download_tanggungan/' . $Proposal->tanggungan); ?>">
-                                <?= $Proposal->tanggungan ?>
-                            </a>
+                            <label class="col-sm-3 col-form-label">Lampiran Tanggungan</label>
+                            <div class="col-sm-9 mt-2">
+                                <a href="<?= base_url('Proposal/download_tanggungan/' . $Proposal->tanggungan); ?>">
+                                    <?= $Proposal->tanggungan ?>
+                                </a>
+                            </div>
                         </div>
-                    </div>
                     <?php } ?>
                     <!-- End catatan -->
                 </form>
-                <a type="button" href="<?php if ($this->session->userdata('jabatan') == "Direksi") {
-                    echo base_url('Proposal/persetujuan');
-                }else {
-                    echo base_url('Proposal');
-                }?>" class="btn btn-outline-secondary mt-5 mb-4">
+                <a type="button" 
+                href="<?php if ($this->session->userdata('jabatan') == "Direksi") {
+                                    echo base_url('Proposal/persetujuan');
+                            } else {
+                                    echo base_url('Proposal');
+                            } ?>" class="btn btn-outline-secondary mt-5 mb-4">
                     Kembali
                 </a>
             </div>

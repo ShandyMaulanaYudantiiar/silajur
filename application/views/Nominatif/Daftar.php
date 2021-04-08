@@ -24,12 +24,15 @@
                                 <td align="center"><?php echo $Proposal->jumlah ?></td>
                                 <td align="center"><?php echo $Proposal->nm_perusahaan ?></td>
                                 <td align="center">
-                                    <a href="<?= base_url('Nominatif/edit/' . $Proposal->nomor); ?>" class="btn btn-info btn-sm" role="button">
-                                    Edit
-                                </a>
-                                <a href="<?= base_url('Nominatif/delete/' . $Proposal->nomor); ?>" class="btn btn-danger btn-sm" role="button">
-                                    Delete
-                                </a>
+                                    <a href="<?= base_url('Nominatif/cetak/' . $Proposal->nomor); ?>" class="btn btn-info btn-sm" role="button">
+                                        Cetak
+                                    </a>
+                                    <!-- <a href="<?= base_url('Nominatif/edit/' . $Proposal->nomor); ?>" class="btn btn-info btn-sm" role="button">
+                                        Edit
+                                    </a> -->
+                                    <a href="<?= base_url('Nominatif/delete/' . $Proposal->nomor); ?>" class="btn btn-danger btn-sm" role="button">
+                                        Delete
+                                    </a>
                                 </td>
                             </tr>
                         <?php } ?>

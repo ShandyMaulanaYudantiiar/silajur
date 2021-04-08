@@ -31,6 +31,7 @@ class Nominatif extends CI_Controller
     {
         $data = [
             'nomor'             => $this->input->post('nomor'),
+            'nip'             => $this->input->post('nip'),
             'tgl'               => $this->input->post('tgl'),
             'tmpt'              => $this->input->post('tmpt'),
             'almt'              => $this->input->post('almt'),
@@ -69,6 +70,18 @@ class Nominatif extends CI_Controller
             'akun' => $this->M_Nominatif->edit($nomor)
         );
         $this->template->display('Nominatif/Edit', $data);
+    }
+    // Menampilkan Halaman Detail Nominatif
+    function cetak($nomor = 0)
+    {
+        $data = array(
+            'title' => 'Edit Nominatif',
+            'Nominatif' => $this->M_Nominatif->cetak($nomor)
+        );
+        $this->load->library('pdf');
+        $this->pdf->setPaper('A4', 'landscape');
+        $this->pdf->filename = "Daftar-Nominatif.pdf";
+        $this->pdf->load_view('Nominatif/cetak', $data);
     }
     // Menghapus Nominatif
     public function delete($nomor)

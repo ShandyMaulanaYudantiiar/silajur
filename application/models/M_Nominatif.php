@@ -17,9 +17,9 @@ class M_Nominatif extends CI_Model
     }
 
     // Menampilkan data Nominatif di detail
-    public function edit($nip)
+    public function edit($nomor)
     {
-        return $this->db->get_where('nominatif', ['nip' => $nip])->row();
+        return $this->db->get_where('nominatif', ['nomor' => $nomor])->row();
     }
 
     // Update Nominatif
@@ -28,9 +28,15 @@ class M_Nominatif extends CI_Model
         return $this->db->where($where)->replace('nominatif', $data);
     }
 
-    // delete Nominatif
-    public function delete($nip)
+    // Menampilkan data Nominatif di detail
+    public function cetak($nomor)
     {
-        return $this->db->where('nip', $nip)->delete('nominatif');
+        return $this->db->get_where('nominatif', ['nomor' => $nomor])->row();
+    }
+
+    // delete Nominatif
+    public function delete($nomor)
+    {
+        return $this->db->where('nomor', $nomor)->delete('nominatif');
     }
 }

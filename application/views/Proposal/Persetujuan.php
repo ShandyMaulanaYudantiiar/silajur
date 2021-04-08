@@ -23,22 +23,28 @@
                                 <td><?php echo $Proposal->record_tgl ?></td>
                                 <td align="center">
                                     <?php
-                                    if ($Proposal->status == "N/A") { ?>
-                                        <a href="<?= base_url('Proposal/konfirmasi/' . $Proposal->id_proposal); ?>" class="btn btn-primary btn-sm" role="button">
-                                            Konfirmasi
+                                    if ($Proposal->tanggungan == "Pending") { ?>
+                                        <a href="<?= base_url('Proposal/konfirmasi/' . $Proposal->id_proposal); ?>" class="btn btn-warning btn-circle btn-sm">
+                                            <i class="fas fa-spinner"></i>
                                         </a>
-                                    <?php } elseif ($Proposal->status == '1') { ?>
-                                        <a href="<?= base_url('Proposal/konfirmasi/' . $Proposal->id_proposal); ?>" class="btn btn-success btn-circle btn-sm">
-                                            <i class="fas fa-check"></i>
-                                        </a>
-                                    <?php } else { ?>
-                                        <a href="<?= base_url('Proposal/konfirmasi/' . $Proposal->id_proposal); ?>" class="btn btn-danger btn-circle btn-sm">
-                                            <i class="fas fa-times"></i>
-                                        </a>
-                                    <?php } ?>
+                                        <?php } else {
+                                        if ($Proposal->status == "N/A") { ?>
+                                            <a href="<?= base_url('Proposal/konfirmasi/' . $Proposal->id_proposal); ?>" class="btn btn-primary btn-sm" role="button">
+                                                Konfirmasi
+                                            </a>
+                                        <?php } elseif ($Proposal->status == '1') { ?>
+                                            <a href="<?= base_url('Proposal/konfirmasi/' . $Proposal->id_proposal); ?>" class="btn btn-success btn-circle btn-sm">
+                                                <i class="fas fa-check"></i>
+                                            </a>
+                                        <?php } else { ?>
+                                            <a href="<?= base_url('Proposal/konfirmasi/' . $Proposal->id_proposal); ?>" class="btn btn-danger btn-circle btn-sm">
+                                                <i class="fas fa-times"></i>
+                                            </a>
+                                        <?php } ?>
                                 </td>
                             </tr>
                         <?php } ?>
+                    <?php } ?>
                     </tbody>
                 </table>
             </div>

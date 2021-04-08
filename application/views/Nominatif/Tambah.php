@@ -10,6 +10,7 @@
                         <input type="number" class="form-control" name="nomor">
                     </div>
                 </div>
+                <input type="hidden" name="nip" value="<?php echo $this->session->userdata("nip"); ?>" />
                 <span><strong>Pemberian entertainment dan sejenisnya</strong></span>
                 <div class="form-group row mt-2">
                     <label class="col-sm-3 col-form-label">Tanggal</label>
